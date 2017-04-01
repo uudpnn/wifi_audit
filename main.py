@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
 import urllib2
 import json
 import uuid
@@ -12,7 +11,7 @@ def get_rss(line):
     rss_exists = line.find(db)
     if (rss_exists >= 0):
         # return line[rss_exists-3:rss_exists+len(db)]
-        return line[rss_exists - 2:rss_exists]
+        return line[rss_exists - 2:rss_exists].replace(':', '').replace(' ', '')
     return "99"
 
 
