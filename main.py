@@ -82,31 +82,31 @@ def main():
         while (1):
             # for line in fileinput.input():
             line = dump_std.stdout.readline()
-            #line ="1a"
-            if(len(line)>200): 
-	            line_upper = line.upper()
-	            # exit_code = os.system('ping www.baidu.com')
-	            #if not exit_code:
-	            if (scheme.strip() == sc):
-	                # rec = print_data(line_upper)
-	                # rec =rec+","+loc_mac
-	                #print line_upper
-	                data = {
-	                    "AP_MAC": loc_mac,
-	                    "DA_MAC": get_mac_da(line_upper),
-	                    "BSSID_MAC": get_mac_BSSID(line_upper),
-	                    "Db": get_rss(line_upper),
-	                    "CH": get_bs_ch(line_upper),
-	                }
-	                headers = {'Content-Type': 'application/json'}
-	                request = urllib2.Request(url, headers=headers, data=json.dumps(data))
-	                # if(urllib2.urlopen(request).getcode()==ok):
-	                try:
-	                    response = urllib2.urlopen(request)
-	                except Exception, e:
-	                    continue
-	            if (scheme == 2):
-	                print "wait....."
+            # line ="1a"
+            if (len(line) > 200):
+                line_upper = line.upper()
+                # exit_code = os.system('ping www.baidu.com')
+                # if not exit_code:
+                if (scheme.strip() == sc):
+                    # rec = print_data(line_upper)
+                    # rec =rec+","+loc_mac
+                    # print line_upper
+                    data = {
+                        "AP_MAC": loc_mac,
+                        "DA_MAC": get_mac_da(line_upper),
+                        "BSSID_MAC": get_mac_BSSID(line_upper),
+                        "Db": get_rss(line_upper),
+                        "CH": get_bs_ch(line_upper),
+                    }
+                    headers = {'Content-Type': 'application/json'}
+                    request = urllib2.Request(url, headers=headers, data=json.dumps(data))
+                    # if(urllib2.urlopen(request).getcode()==ok):
+                    try:
+                        response = urllib2.urlopen(request)
+                    except Exception, e:
+                        continue
+                if (scheme == 2):
+                    print "wait....."
     except KeyboardInterrupt:
         print("Program stopped by user")
 
